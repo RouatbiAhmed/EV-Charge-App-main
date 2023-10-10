@@ -1,0 +1,229 @@
+[
+    {
+        "DataProvider": {
+            "WebsiteURL": "http://openchargemap.org",
+            "Comments": null,
+            "DataProviderStatusType": {
+                "IsProviderEnabled": true,
+                "ID": 1,
+                "Title": "Manual Data Entry"
+            },
+            "IsRestrictedEdit": false,
+            "IsOpenDataLicensed": true,
+            "IsApprovedImport": true,
+            "License": "Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0)",
+            "DateLastImported": null,
+            "ID": 1,
+            "Title": "Open Charge Map Contributors"
+        },
+        "OperatorInfo": {
+            "WebsiteURL": "https://apps.total-ev-charge.com/",
+            "Comments": null,
+            "PhonePrimaryContact": null,
+            "PhoneSecondaryContact": null,
+            "IsPrivateIndividual": false,
+            "AddressInfo": null,
+            "BookingURL": null,
+            "ContactEmail": null,
+            "FaultReportEmail": null,
+            "IsRestrictedEdit": false,
+            "ID": 3447,
+            "Title": "TotalEnergies (FR)"
+        },
+        "UsageType": {
+            "IsPayAtLocation": null,
+            "IsMembershipRequired": null,
+            "IsAccessKeyRequired": null,
+            "ID": 1,
+            "Title": "Public"
+        },
+        "StatusType": {
+            "IsOperational": true,
+            "IsUserSelectable": true,
+            "ID": 50,
+            "Title": "Operational"
+        },
+        "SubmissionStatus": {
+            "IsLive": true,
+            "ID": 200,
+            "Title": "Submission Published"
+        },
+        "UserComments": [
+            {
+                "ID": 29057,
+                "ChargePointID": 189069,
+                "CommentTypeID": 10,
+                "CommentType": {
+                    "ID": 10,
+                    "Title": "General Comment"
+                },
+                "UserName": "R.Ahmed",
+                "Comment": "testpost",
+                "Rating": 3,
+                "RelatedURL": "string",
+                "DateCreated": "2023-10-07T10:25:31.36Z",
+                "User": {
+                    "ID": 45863,
+                    "IdentityProvider": null,
+                    "Identifier": null,
+                    "CurrentSessionToken": null,
+                    "Username": "R.Ahmed",
+                    "Profile": null,
+                    "Location": null,
+                    "WebsiteURL": null,
+                    "ReputationPoints": 7,
+                    "Permissions": null,
+                    "PermissionsRequested": null,
+                    "DateCreated": null,
+                    "DateLastLogin": null,
+                    "IsProfilePublic": null,
+                    "IsEmergencyChargingProvider": null,
+                    "IsPublicChargingProvider": null,
+                    "Latitude": null,
+                    "Longitude": null,
+                    "EmailAddress": null,
+                    "EmailHash": null,
+                    "ProfileImageURL": "https://www.gravatar.com/avatar/e493c4ee49cf1d2df3b90aaf7d1f6a8c?s=80&d=robohash",
+                    "IsCurrentSessionTokenValid": null,
+                    "APIKey": null,
+                    "SyncedSettings": null
+                },
+                "CheckinStatusTypeID": 10,
+                "CheckinStatusType": {
+                    "IsPositive": true,
+                    "IsAutomatedCheckin": false,
+                    "ID": 10,
+                    "Title": "Charged Successfully"
+                },
+                "IsActionedByEditor": false
+            }
+        ],
+        "PercentageSimilarity": null,
+        "MediaItems": [
+            {
+                "ID": 39822,
+                "ChargePointID": 189069,
+                "ItemURL": "https://media.openchargemap.io/images/TN/OCM189069/OCM-189069.orig.2023100712391516.jpg",
+                "ItemThumbnailURL": "https://media.openchargemap.io/images/TN/OCM189069/OCM-189069.thmb.2023100712391516.jpg",
+                "Comment": "",
+                "IsEnabled": true,
+                "IsVideo": false,
+                "IsFeaturedItem": false,
+                "IsExternalResource": false,
+                "MetadataValue": null,
+                "User": {
+                    "ID": 45863,
+                    "IdentityProvider": null,
+                    "Identifier": null,
+                    "CurrentSessionToken": null,
+                    "Username": "R.Ahmed",
+                    "Profile": null,
+                    "Location": null,
+                    "WebsiteURL": null,
+                    "ReputationPoints": 7,
+                    "Permissions": null,
+                    "PermissionsRequested": null,
+                    "DateCreated": null,
+                    "DateLastLogin": null,
+                    "IsProfilePublic": null,
+                    "IsEmergencyChargingProvider": null,
+                    "IsPublicChargingProvider": null,
+                    "Latitude": null,
+                    "Longitude": null,
+                    "EmailAddress": null,
+                    "EmailHash": null,
+                    "ProfileImageURL": "https://www.gravatar.com/avatar/e493c4ee49cf1d2df3b90aaf7d1f6a8c?s=80&d=robohash",
+                    "IsCurrentSessionTokenValid": null,
+                    "APIKey": null,
+                    "SyncedSettings": null
+                },
+                "DateCreated": "2023-10-07T12:39:00Z"
+            }
+        ],
+        "IsRecentlyVerified": true,
+        "DateLastVerified": "2023-10-07T12:39:00Z",
+        "ID": 189069,
+        "UUID": "615DCB00-20EF-40CF-993D-2F0213113C5D",
+        "ParentChargePointID": null,
+        "DataProviderID": 1,
+        "DataProvidersReference": null,
+        "OperatorID": 3447,
+        "OperatorsReference": null,
+        "UsageTypeID": 1,
+        "UsageCost": null,
+        "AddressInfo": {
+            "ID": 189428,
+            "Title": "Total",
+            "AddressLine1": "Total",
+            "AddressLine2": null,
+            "Town": "Sousse",
+            "StateOrProvince": "Sousse",
+            "Postcode": "4001",
+            "CountryID": 228,
+            "Country": {
+                "ISOCode": "TN",
+                "ContinentCode": "AF",
+                "ID": 228,
+                "Title": "Tunisia"
+            },
+            "Latitude": 35.84049320890155,
+            "Longitude": 10.622152316586835,
+            "ContactTelephone1": null,
+            "ContactTelephone2": null,
+            "ContactEmail": null,
+            "AccessComments": null,
+            "RelatedURL": null,
+            "Distance": null,
+            "DistanceUnit": 0
+        },
+        "Connections": [
+            {
+                "ID": 305636,
+                "ConnectionTypeID": 1036,
+                "ConnectionType": {
+                    "FormalName": "IEC 62196-2",
+                    "IsDiscontinued": false,
+                    "IsObsolete": false,
+                    "ID": 1036,
+                    "Title": "Type 2 (Tethered Connector) "
+                },
+                "Reference": null,
+                "StatusTypeID": 50,
+                "StatusType": {
+                    "IsOperational": true,
+                    "IsUserSelectable": true,
+                    "ID": 50,
+                    "Title": "Operational"
+                },
+                "LevelID": 2,
+                "Level": {
+                    "Comments": "Over 2 kW, usually non-domestic socket type",
+                    "IsFastChargeCapable": false,
+                    "ID": 2,
+                    "Title": "Level 2 : Medium (Over 2kW)"
+                },
+                "Amps": 32,
+                "Voltage": 400,
+                "PowerKW": 22.0,
+                "CurrentTypeID": 20,
+                "CurrentType": {
+                    "Description": "Alternating Current - Three Phase",
+                    "ID": 20,
+                    "Title": "AC (Three-Phase)"
+                },
+                "Quantity": 2,
+                "Comments": null
+            }
+        ],
+        "NumberOfPoints": 1,
+        "GeneralComments": null,
+        "DatePlanned": null,
+        "DateLastConfirmed": null,
+        "StatusTypeID": 50,
+        "DateLastStatusUpdate": "2023-10-07T12:39:00Z",
+        "MetadataValues": null,
+        "DataQualityLevel": 1,
+        "DateCreated": "2021-09-06T15:34:00Z",
+        "SubmissionStatusTypeID": 200
+    }
+]
