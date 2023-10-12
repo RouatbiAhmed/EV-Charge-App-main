@@ -9,7 +9,6 @@ import 'dart:convert';
 
 import 'package:evchstation/home_screen.dart';
 import 'package:evchstation/screens/auth/login_screen.dart';
-import 'package:evchstation/screens/design.dart';
 import 'package:evchstation/screens/onboarding/onbording.dart';
 import 'package:evchstation/screens/splashscreen/splash_screen.dart';
 import 'package:evchstation/screens/toggle/addcomment.dart';
@@ -25,7 +24,6 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_offline/flutter_offline.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
-
 
 late Size mq;
 
@@ -58,11 +56,11 @@ class MyApp extends StatelessWidget {
         home:
             //OnBoarding()
             // LoginScreen()
-           // SplashScreen()
-           // Design()
+            // SplashScreen()
+            // Design()
             HomeScreen()
-           //DemoPage()
-           // AddComment()
+        //DemoPage()
+        // AddComment()
         );
   }
 }
@@ -100,8 +98,9 @@ class DemoPage extends StatelessWidget {
                       : Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Lottie.asset("assets/networkerror.json",height: 200, fit: BoxFit.cover, repeat: true),
-                            Text("Check yout network connection",
+                            Lottie.asset("assets/networkerror.json",
+                                height: 200, fit: BoxFit.cover, repeat: true),
+                            const Text("Check yout network connection",
                                 style: TextStyle(
                                   fontSize: 20,
                                   color: Colors.black,

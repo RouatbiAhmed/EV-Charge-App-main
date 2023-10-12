@@ -6,10 +6,10 @@ import 'package:http/http.dart' as http;
 
 const String url = 'https://api.openchargemap.io/v3/mediaitem?key=5b031cec-5fa8-4db3-991e-8279fa849a16';
 
-Future<void> postData({required String imagebase64}) async {
+Future<void> postData({required String imagebase64,required int ID,required String desciptiontext}) async {
   Map<String, dynamic> body = {
-    "chargePointID": 189069,
-    "comment": "test1",
+    "chargePointID": ID,
+    "comment": desciptiontext,
     "imageDataBase64": "data:image/jpeg;base64,${imagebase64}"
   };
 

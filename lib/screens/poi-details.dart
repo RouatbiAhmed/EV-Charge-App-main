@@ -1,14 +1,10 @@
-import 'package:evchstation/api/get-stations.dart';
 import 'package:evchstation/controller/arguments.dart';
 import 'package:evchstation/controller/poidetailscontroller.dart';
 import 'package:evchstation/screens/toggle/addcomment.dart';
 import 'package:evchstation/screens/toggle/toggle.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'toggle/addphoto.dart';
 
@@ -58,7 +54,7 @@ class PoiDetails extends StatelessWidget {
                                 Container(
                                   height: screenHeight * 0.2,
                                   width: screenWidth,
-                                  color: Color.fromARGB(255, 173, 22, 128),
+                                  color:Color(0xFF28AAB1),
                                 ),
 
                               // Container pour le contenu textuel
@@ -153,9 +149,9 @@ class PoiDetails extends StatelessWidget {
                                       heroTag: "addphoto",
                                       onPressed: () {
                                         // Action 1
-                                        Get.to(AddPhoto());
+                                        Get.to(AddPhoto(),arguments: Arguments(addressinfo: arg.addressinfo, operatorinfo: arg.operatorinfo, statustype: arg.statustype, id: arg.id, statustypetitle: arg.statustypetitle, usagetypetitle: arg.usagetypetitle, numberofpoints: arg.numberofpoints, usercomment: arg.usercomment, connection: arg.connection, media: arg.media));
                                       },
-                                      child: Icon(Icons.star),
+                                      child: Icon(Icons.image),
                                     ),
                                   ),
                                   const SizedBox(height:16), // Espacement entre les boutons
@@ -166,7 +162,7 @@ class PoiDetails extends StatelessWidget {
                                       onPressed: () {
                                         Get.to(AddComment(),arguments: Arguments(addressinfo: arg.addressinfo, operatorinfo: arg.operatorinfo, statustype: arg.statustype, id: arg.id, statustypetitle: arg.statustypetitle, usagetypetitle: arg.usagetypetitle, numberofpoints: arg.numberofpoints, usercomment: arg.usercomment, connection: arg.connection, media: arg.media));
                                       },
-                                      child: Icon(Icons.comment),
+                                      child:const Icon(Icons.comment),
                                     ),
                                   ),
                                 ],

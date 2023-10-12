@@ -11,10 +11,6 @@ class Arguments {
   final int id;
   final OperatorInfo operatorinfo;
 
-  // final String connectiontitle;
-  //final double power;
-  //final int voltage;
-  //final int apmerage;
 
   //final String operatorname;
   final String statustypetitle;

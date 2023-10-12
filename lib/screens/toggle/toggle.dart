@@ -13,8 +13,7 @@ class ToggleSwitchExample extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     return Column(
       children: [
-        Obx(
-          () => CupertinoSlidingSegmentedControl<int>(
+        Obx(() => CupertinoSlidingSegmentedControl<int>(
             groupValue: currentIndex.value,
             onValueChanged: (value) {
               currentIndex.value = value!;
@@ -30,9 +29,9 @@ class ToggleSwitchExample extends StatelessWidget {
           () => IndexedStack(
             index: currentIndex.value,
             children: [
-              Widget1(), // Replace with your first widget
-              Widget2(), // Replace with your second widget
-              Widget3(), // Replace with your third widget
+              Widget1(), 
+              Widget2(), 
+              Widget3(), 
             ],
           ),
         ),

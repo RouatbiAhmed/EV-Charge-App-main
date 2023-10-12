@@ -17,8 +17,7 @@ class Screen2 extends StatelessWidget {
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 )),
-            Lottie.asset("assets/plugandcharge.json",
-                height: 200, fit: BoxFit.cover, repeat: true)
+            Lottie.asset("assets/plugandcharge.json",height: 200, fit: BoxFit.cover, repeat: true)
           ],
         ),
       ),
