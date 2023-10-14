@@ -7,6 +7,7 @@ class Poi {
   final int id;
   final AddressInfo addressInfo;
   final OperatorInfo operatorinfo;
+  final String UsageCost;
 
   //List<Connection>? connections;
   final StatusType? statusType;
@@ -24,6 +25,7 @@ class Poi {
     required this.id,
     required this.addressInfo,
     required this.operatorinfo,
+    required this.UsageCost,
     // List<Connection>? connections,//a enlever avec amps,voltage et powerkw
     required this.statusType,
     required this.usageType,
@@ -43,6 +45,7 @@ class Poi {
     //  final operinfo=json['OperatorInfo'];
 
     return Poi(
+      UsageCost: json['UsageCost']??"Unknown",
       id: json['ID'],
       addressInfo:AddressInfo.fromJson(json['AddressInfo'] as Map<String, dynamic>),
       operatorinfo: json['OperatorInfo'] != null

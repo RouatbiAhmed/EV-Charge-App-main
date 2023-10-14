@@ -9,6 +9,7 @@ class Arguments {
   final StatusType? statustype;
   List? connections;
   final int id;
+  final String usagecost;
   final OperatorInfo operatorinfo;
 
 
@@ -33,6 +34,7 @@ class Arguments {
     required this.id,
     required this.statustypetitle,
     required this.usagetypetitle,
+    required this.usagecost,
     //required this.websiteurl,
     required this.numberofpoints,
 

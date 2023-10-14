@@ -1,3 +1,4 @@
+import 'package:evchstation/controller/Auth/logincontroller.dart';
 import 'package:evchstation/controller/arguments.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class ToggleSwitchExample extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+
     return Column(
       children: [
         Obx(() => CupertinoSlidingSegmentedControl<int>(
@@ -45,6 +47,8 @@ class Widget3 extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+          final AuthController authcontroller =Get.put(AuthController(), permanent: true);
+
     final Arguments arg = Get.arguments;
 
     return Container(
@@ -76,7 +80,7 @@ class Widget3 extends StatelessWidget {
                         shrinkWrap: true,
                         itemCount: arg.media.length,
                         itemBuilder: (BuildContext context, int index) {
-                          final String user =arg.media[index]['User']['Username'].toString();
+                          final String user =authcontroller.getname().toString();
                           final String desciption =arg.media[index]['Comment'].toString();
                           final String imageurl =arg.media[index]['ItemURL'].toString();
                           DateFormat dateFormat = DateFormat("dd/MM/yyyy");
@@ -240,8 +244,8 @@ class Widget1 extends StatelessWidget {
                     ),
                     Text("operational status: ${arg.statustypetitle}"),
                     Text("usage: ${arg.usagetypetitle}"),
-                    Text(
-                        "is operational: ${arg.statustype!.isOperational ?? "unnown"}"),
+                    Text("is operational: ${arg.statustype!.isOperational ?? "unnown"}"),
+                    Text("usage cost: ${arg.usagecost}"),
                   ],
                 ),
               ),

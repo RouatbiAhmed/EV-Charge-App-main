@@ -39,7 +39,7 @@ class OnBoarding extends StatelessWidget {
           ),
           bottomSheet: Container(
             height: screenHeight * 0.04,
-            //color: Color(0xb266b5ff),
+            color: Color(0x28AAB1),
             //#28AAB1
             child: Center(
               child: SmoothPageIndicator(

@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:evchstation/api/get-stations.dart';
 import 'package:evchstation/controller/Auth/logincontroller.dart';
 import 'package:evchstation/controller/arguments.dart';
+import 'package:evchstation/controller/currentlocationcontroller.dart';
 import 'package:evchstation/controller/homeController.dart';
 import 'package:evchstation/controller/poidetailscontroller.dart';
 import 'package:evchstation/models/poi/poi.dart';
@@ -20,8 +21,9 @@ import 'dart:ui' as ui;
 import 'models/poi/connections/connection.dart';
 
 class HomeScreen extends StatelessWidget {
-  final AuthController authcontroller =
-      Get.put(AuthController(), permanent: true);
+  final AuthController authcontroller =Get.put(AuthController(), permanent: true);
+    final CurrentLocationController locationcontroller =Get.put(CurrentLocationController(), permanent: true);
+
   final HomeController homeController =
       Get.put(HomeController()); // Associe HomeController à HomeScreen
 
@@ -73,6 +75,7 @@ class HomeScreen extends StatelessWidget {
                         operatorinfo: poi.operatorinfo,
                         numberofpoints: poi.numberOfPoints ?? 0,
                         statustype: poi.statusType,
+                        usagecost: poi.UsageCost,
                         //--Connection-----
                         //----------usage restiction
                         statustypetitle: poi.statusType!.title ?? "Unknown",
@@ -92,8 +95,10 @@ class HomeScreen extends StatelessWidget {
           return GoogleMap(
             initialCameraPosition: CameraPosition(
               target: LatLng(
-                  pois[0].addressInfo!.latitude, //pois
-                  pois[0].addressInfo!.longitude), //pois
+                locationcontroller.latitude.value,locationcontroller.longitude.value
+                  //pois[0].addressInfo!.latitude, //pois
+                  //pois[0].addressInfo!.longitude
+                  ), //pois
               zoom: 12.0,
             ),
             markers: mymarkers,
@@ -105,4 +110,3 @@ class HomeScreen extends StatelessWidget {
     ));
   }
 }
-

@@ -4,14 +4,17 @@
 //probleme toogle 307 titile
 //278613 scroll
 //278672 image and 278658 277877
+//---------
+//1-media querry 
+//2-conroller 
+//3-splash and on boarding
+//4-comment the code 
+//5-API model review 
 
-import 'dart:convert';
 
 import 'package:evchstation/home_screen.dart';
-import 'package:evchstation/screens/auth/login_screen.dart';
 import 'package:evchstation/screens/onboarding/onbording.dart';
 import 'package:evchstation/screens/splashscreen/splash_screen.dart';
-import 'package:evchstation/screens/toggle/addcomment.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -19,11 +22,7 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'firebase_options.dart';
-import 'dart:math' as math;
-import 'package:http/http.dart' as http;
 import 'package:flutter_offline/flutter_offline.dart';
-import 'package:image_picker/image_picker.dart';
-import 'dart:io';
 
 late Size mq;
 
@@ -49,16 +48,15 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
           elevation: 1,
           iconTheme: IconThemeData(color: Colors.black),
-          titleTextStyle: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.normal, fontSize: 19),
+          titleTextStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.normal, fontSize: 19),
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
         )),
         home:
-            //OnBoarding()
+           // OnBoarding()
             // LoginScreen()
-            // SplashScreen()
+             SplashScreen()
             // Design()
-            HomeScreen()
+          //  HomeScreen()
         //DemoPage()
         // AddComment()
         );
@@ -111,13 +109,13 @@ class DemoPage extends StatelessWidget {
             ],
           );
         },
-        child: Column(
+        child:const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Text(
+             Text(
               'There are no bottons to push :)',
             ),
-            new Text(
+             Text(
               'Just turn off your internet.',
             ),
           ],

@@ -1,9 +1,11 @@
 import 'dart:convert';
+import 'package:evchstation/controller/Auth/logincontroller.dart';
 import 'package:evchstation/controller/commentcontroller.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 final commentcontroller = Get.put(CommentController());
+  final AuthController authcontroller =Get.put(AuthController(), permanent: true);
 
 void postData(
     {required String comment,
@@ -21,7 +23,7 @@ void postData(
   final Map<String, dynamic> body = {
     'chargePointID': ID,
     'commentTypeID': 10,
-    'userName': 'Ahmed',
+    'userName': authcontroller.getname(),
     'comment': comment,
     'rating': rate,
     'relatedURL': 'string',

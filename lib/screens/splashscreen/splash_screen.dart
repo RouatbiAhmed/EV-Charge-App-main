@@ -6,8 +6,10 @@ import 'dart:developer';
 import 'package:evchstation/home_screen.dart';
 import 'package:evchstation/main.dart';
 import 'package:evchstation/screens/auth/login_screen.dart';
+import 'package:evchstation/screens/onboarding/onbording.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,12 +23,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 4), () {
       //exit full-screen
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
       SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
           systemNavigationBarColor: Colors.white,
           statusBarColor: Colors.white));
+          Get.to(OnBoarding());
     });
   }
 
@@ -48,7 +51,6 @@ class _SplashScreenState extends State<SplashScreen> {
             // const Text('EV-Charge-Station')
             ),
 
-        //google login button
         Positioned(
             bottom: mq.height * .15,
             width: mq.width,
