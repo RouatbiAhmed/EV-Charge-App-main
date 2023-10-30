@@ -5,46 +5,54 @@
 //278613 scroll
 //278672 image and 278658 277877
 //---------
-//1-media querry 
-//2-conroller 
-//3-splash and on boarding
-//4-comment the code 
-//5-API model review 
+//1-media querry-------------
+//2-google auth conroller --------
+//3-splash and on boarding----------
+//4-comment the code
+//5-API model review-----------
+//6-to json fix------------
+//7-user profile and signup buttton ---------
+//8-rester connecter--------------
+//9-pagination--------------
+//10-Text style
+//11-Live stream location-----------
+//12-Binding et reglage getfind
+//13-Getbuilder-----------
+//14-network connection -----------
 
-
-import 'package:evchstation/home_screen.dart';
-import 'package:evchstation/screens/onboarding/onbording.dart';
-import 'package:evchstation/screens/splashscreen/splash_screen.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:evchstation/controller/Auth/issignedin.dart';
+import 'package:evchstation/controller/Auth/authcontroller.dart';
+import 'package:evchstation/controller/poidetailscontroller.dart';
+import 'package:evchstation/view/home_screen.dart';
+import 'package:evchstation/view/auth/login_screen.dart';
+import 'package:evchstation/view/onboarding/onbording.dart';
+import 'package:evchstation/view/splash-screen/splash_screen.dart';
+import 'package:evchstation/view/add-media-items/addphoto.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'firebase_options.dart';
-import 'package:flutter_offline/flutter_offline.dart';
 
-late Size mq;
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-        //title: 'We Chat',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            appBarTheme: const AppBarTheme(
+          appBarTheme: const AppBarTheme(
           centerTitle: true,
           elevation: 1,
           iconTheme: IconThemeData(color: Colors.black),
@@ -52,18 +60,28 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
         )),
         home:
-           // OnBoarding()
-            // LoginScreen()
-             SplashScreen()
+              //AddPhoto(),
+             //IsSignedIn(),
+             OnBoarding(),
+            // LoginScreen(),
+            // SplashScreen(),
             // Design()
-          //  HomeScreen()
+          // HomeScreen(),
         //DemoPage()
         // AddComment()
+      initialBinding: BindingsBuilder(() {
+      Get.put(AuthController());
+      Get.put(PoiDetailsController());
+
+    }),
         );
+        
+        
   }
 }
 
-class DemoPage extends StatelessWidget {
+
+/*class DemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,8 +101,7 @@ class DemoPage extends StatelessWidget {
                 right: 0.0,
                 child: Container(
                   color: connected
-                      ? const Color(0xFF00EE44)
-                      : const Color(0xFFEE4400),
+                      ? const Color(0xFF00EE44):const Color(0xFFEE4400),
                   child: Center(
                     child: Text("${connected ? 'ONLINE' : 'OFFLINE'}"),
                   ),
@@ -109,13 +126,13 @@ class DemoPage extends StatelessWidget {
             ],
           );
         },
-        child:const Column(
+        child: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-             Text(
+            Text(
               'There are no bottons to push :)',
             ),
-             Text(
+            Text(
               'Just turn off your internet.',
             ),
           ],
@@ -123,61 +140,5 @@ class DemoPage extends StatelessWidget {
       ),
     );
   }
-}
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-void postData() async {
-  final url = 'https://api.openchargemap.io/v3/comment?key=5b031cec-5fa8-4db3-991e-8279fa849a16';
-  final Map<String, String> headers = {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    'Authorization': 'Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOiI0NTg2MyIsIm5vbmNlIjoiMDkzNTM2ZDYtN2YzMC00NjE1LTgwNGItNGIyZTM5NmZhNjg5IiwibmJmIjoxNjk2NzcwMTg5LCJleHAiOjE2OTk0NDg1ODksImlzcyI6Ik9wZW4gQ2hhcmdlIE1hcCIsImF1ZCI6ImFwaS5vcGVuY2hhcmdlbWFwLmlvIn0.fHwaAevP-LPlewp_-FkT8ldB4oC3QVEaYNxDGQEy7h8'
-  };
-
-  final Map<String, dynamic> body = {
-    'chargePointID': 189069,
-    'commentTypeID': 10,
-    'userName': 'Ahmed',
-    'comment': 'TEST9',
-    'rating': 3.4,
-    'relatedURL': 'string',
-    'checkinStatusTypeID': 22
-  };
-
-
-
-
-  try {
-    final response = await http.post(Uri.parse(url),
-        headers: headers, body: json.encode(body));
-    final Map<String, dynamic> data = json.decode(response.body);
-    print(data);
-  } catch (error) {
-    print(error);
-  }
-}
-
-void main() {
-  postData();
-}
-*/
-
-
-
-
-
-
-
-
+}*/
 

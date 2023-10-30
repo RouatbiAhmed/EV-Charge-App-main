@@ -20,12 +20,4 @@ class UsageType {
         id: json['ID'] as int?,
         title: json['Title'] as String?,
       );
-
-  Map<String, dynamic> toJson() => {
-        'IsPayAtLocation': isPayAtLocation,
-        'IsMembershipRequired': isMembershipRequired,
-        'IsAccessKeyRequired': isAccessKeyRequired,
-        'ID': id,
-        'Title': title,
-      };
 }

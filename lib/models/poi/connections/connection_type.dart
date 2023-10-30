@@ -23,11 +23,4 @@ class ConnectionType {
     );
   }
 
-  Map<String, dynamic> toJson() => {
-        'FormalName': formalName,
-        'IsDiscontinued': isDiscontinued,
-        'IsObsolete': isObsolete,
-        'ID': id,
-        'Title': title,
-      };
 }

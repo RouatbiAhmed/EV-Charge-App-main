@@ -1,18 +1,19 @@
 import 'dart:convert';
-import 'package:evchstation/controller/Auth/logincontroller.dart';
-import 'package:evchstation/controller/commentcontroller.dart';
+import 'package:evchstation/controller/Auth/authcontroller.dart';
+import 'package:evchstation/controller/add-comment-controller.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 final commentcontroller = Get.put(CommentController());
-  final AuthController authcontroller =Get.put(AuthController(), permanent: true);
+final AuthController authcontroller =Get.put(AuthController(), permanent: true);
 
 void postData(
-    {required String comment,
+    {
+    required String comment,
     required double rate,
     required int status,
-    required int ID}) async {
-  commentcontroller.isLoading.value = true;
+    required int ID
+    }) async {
   const url ='https://api.openchargemap.io/v3/comment?key=5b031cec-5fa8-4db3-991e-8279fa849a16';
   final Map<String, String> headers = {
     'Content-Type': 'application/json',
@@ -23,7 +24,7 @@ void postData(
   final Map<String, dynamic> body = {
     'chargePointID': ID,
     'commentTypeID': 10,
-    'userName': authcontroller.getname(),
+    'userName': authcontroller.username,
     'comment': comment,
     'rating': rate,
     'relatedURL': 'string',
@@ -32,12 +33,17 @@ void postData(
 
   try {
     final response = await http.post(Uri.parse(url),
-        headers: headers, body: json.encode(body));
+    headers: headers, 
+    body: json.encode(body));
     final Map<String, dynamic> data = json.decode(response.body);
-    commentcontroller.isLoading.value = false;
+    commentcontroller.setLoading(true);
+      await Future.delayed(const Duration(seconds:3));
+
+    commentcontroller.setLoading(false);
     print(data);
   } catch (error) {
-    commentcontroller.isLoading.value = false;
-    print(error);
+     throw Exception('Error: $error');
   }
 }
+
+

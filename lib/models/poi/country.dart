@@ -13,10 +13,5 @@ class Country {
         title: json['Title'] as String?,
       );
 
-  Map<String, dynamic> toJson() => {
-        'ISOCode': isoCode,
-        'ContinentCode': continentCode,
-        'ID': id,
-        'Title': title,
-      };
+
 }

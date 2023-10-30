@@ -18,10 +18,4 @@ class StatusType {
         title: json['Title'] as String?,
       );
 
-  Map<String, dynamic> toJson() => {
-        'IsOperational': isOperational,
-        'IsUserSelectable': isUserSelectable,
-        'ID': id,
-        'Title': title,
-      };
 }

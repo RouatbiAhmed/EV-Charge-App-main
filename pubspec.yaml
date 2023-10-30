@@ -58,6 +58,9 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   flutter_offline: ^3.0.0
   geolocator: ^10.0.1
+  flutter_polyline_points: ^1.0.0
+  location: ^5.0.3
+  dio: ^5.3.3
 
 dev_dependencies:
   flutter_test:
@@ -80,7 +83,6 @@ flutter:
         - assets/IEC 62196-3 Configuration AA.png
         - assets/IEC 62196-3 Configuration FF.png
         - assets/IEC 62196-2 Type 2.png
-        - assets/green.png
         - assets/slplash.json
         - assets/getdirection.json
         - assets/plugandcharge.json
@@ -93,6 +95,7 @@ flutter:
         - assets/done.json
         - assets/SAE J1772-2009.png
         - assets/Not Specified.png
+        - assets/google.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

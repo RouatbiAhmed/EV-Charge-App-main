@@ -5,16 +5,14 @@ class CurrentLocationController extends GetxController {
   @override
   void onInit() async {
     await getUserLocation();
-    //currentWeatherData = getCurrentWeather(latitude.value, longitude.value);
     super.onInit();
   }
 
   dynamic currentWeatherData;
   var latitude = 30.0.obs;
   var longitude = 50.0.obs;
-
   var isloaded = false.obs;
-
+  //Get User location
   getUserLocation() async {
     bool isLocationEnabled;
     LocationPermission userPermission;
@@ -34,8 +32,7 @@ class CurrentLocationController extends GetxController {
       }
     }
 
-    return await Geolocator.getCurrentPosition(
-            desiredAccuracy: LocationAccuracy.high)
+    return await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high)
         .then((value) {
       latitude.value = value.latitude;
       longitude.value = value.longitude;
