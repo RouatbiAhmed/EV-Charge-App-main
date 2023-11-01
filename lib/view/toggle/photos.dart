@@ -1,4 +1,3 @@
-import 'package:evchstation/controller/Auth/authcontroller.dart';
 import 'package:evchstation/controller/poidetailscontroller.dart';
 import 'package:evchstation/models/poi/poi.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +31,7 @@ class Photos extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.9),
                     spreadRadius: 1,
                     blurRadius: 1,
-                    offset: Offset(0, 1),
+                    offset:const Offset(0, 1),
                   ),
                 ],
               ),

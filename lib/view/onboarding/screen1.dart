@@ -7,21 +7,23 @@ class Screen1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [     
-            Lottie.asset("assets/getdirection.json",height: 200, fit: BoxFit.cover, repeat: true),
+            Lottie.asset("assets/getdirection.json",height: screenHeight*0.27, fit: BoxFit.cover, repeat: true),
+                SizedBox(height: screenHeight*0.01,),
                 const Text("Get Direction",
                 style: TextStyle(
                   fontSize: 24,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 )),
-                    const  Padding(
-                  padding:  EdgeInsets.only(top:18.0),
-                  child: Text('Our intuitive interface guides you effortlessly, ensuring you never lose your way.',
+                      Padding(
+                  padding:  EdgeInsets.only(top:screenHeight*0.03),
+                  child: const Text('Our intuitive interface guides you effortlessly, ensuring you never lose your way.',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.grey,

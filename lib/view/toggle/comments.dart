@@ -45,8 +45,8 @@ class Comments extends StatelessWidget {
                     final bool isPositive =poi.usercomment![index].checkinStatusType?.isPositive ==true? true: false;
 
                     return ListTile(
-                      title: Text(commentText!),
-                      subtitle: Text(userName!),
+                      title: Text(commentText),
+                      subtitle: Text(userName),
                       leading: isPositive
                           ? const Icon(
                               Icons.done,

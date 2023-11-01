@@ -21,7 +21,7 @@ class UserProfile extends StatelessWidget {
               color: Colors.grey.withOpacity(0.9),
               spreadRadius: 3,
               blurRadius: 3,
-              offset: Offset(0, 1),
+              offset:const Offset(0, 1),
             ),
           ],
         ),
@@ -51,7 +51,7 @@ class UserProfile extends StatelessWidget {
               height: screenHeight * 0.05,
             ),
               Text(
-                "${authController.userphonenumber ?? "Unknown"}",
+                authController.userphonenumber ?? "Unknown",
                 style: const TextStyle(
                   color: Colors.black,
                   fontSize: 18,

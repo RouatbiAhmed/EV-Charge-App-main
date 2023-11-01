@@ -6,10 +6,12 @@ import 'package:get/get.dart';
 
 
 class IsSignedIn extends GetWidget<AuthController> {
+  const IsSignedIn({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      return controller.useremail != null ? const HomeScreen() : SplashScreen();
+      return controller.useremail != null ?  HomeScreen() : SplashScreen();
     });
   }
 }

@@ -109,7 +109,7 @@ class AddCommentScreen extends StatelessWidget {
                   direction: Axis.horizontal,
                   allowHalfRating: true,
                   itemCount: 5,
-                  itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                  itemPadding:  EdgeInsets.symmetric(horizontal: screenWidth*0.01),
                   itemBuilder: (context, _) => const Icon(
                     Icons.star,
                     color: Colors.amber,
@@ -118,7 +118,7 @@ class AddCommentScreen extends StatelessWidget {
                     commentController.rate.value = rating;
                   },
                 ),
-                const SizedBox(height: 52),
+                SizedBox(height: screenHeight*0.1),
                 ElevatedButton(
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
@@ -127,8 +127,7 @@ class AddCommentScreen extends StatelessWidget {
                           ID: poi!.id,
                           comment: commentTextController.text,
                           rate: commentController.rate.value,
-                          status:
-                              commentController.chargestatus.value ? 10 : 22,
+                          status:commentController.chargestatus.value ? 10 : 22,
                         );
                       } catch (error) {
                         print(error);
@@ -138,8 +137,7 @@ class AddCommentScreen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF28AAB1),
                     elevation: 5, 
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)), 
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)), 
                   ),
                   child:const Text('Submit'),
                 ),

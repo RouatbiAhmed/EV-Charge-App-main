@@ -34,12 +34,12 @@ class LoginScreen extends StatelessWidget {
             height: screenHeight * .06,
             child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF28AAB1),
+                    backgroundColor:const Color(0xFF28AAB1),
                     shape: const StadiumBorder(),
                     elevation: 1),
                 onPressed: () {
                   logincontroller.google_signin();
-                  logincontroller.google_signOut();
+                  //logincontroller.google_signOut();
                 },
                 //google icon
                 icon: Image.asset('assets/google.png', height: screenHeight * .03),

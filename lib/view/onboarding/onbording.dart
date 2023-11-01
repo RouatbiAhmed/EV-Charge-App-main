@@ -18,15 +18,13 @@ class OnBoarding extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          body: Container(
-            child: PageView(
-              controller: swipecontroller,
-              children: const [
-                Screen1(),
-                Screen2(),
-                Screen3(),
-              ],
-            ),
+          body: PageView(
+            controller: swipecontroller,
+            children: const [
+              Screen3(),
+              Screen1(),
+              Screen2(),
+            ],
           ),
           bottomSheet: Container(
             height: screenHeight * 0.04,

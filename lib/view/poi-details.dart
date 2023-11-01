@@ -106,7 +106,7 @@ class PoiDetails extends StatelessWidget {
                               Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  SizedBox(height: 16),
+                                   SizedBox(height: screenHeight*0.02),
                                   FloatingActionButton(
                                     heroTag: "openandclose",
                                     onPressed: () {
@@ -116,19 +116,19 @@ class PoiDetails extends StatelessWidget {
                                         ? Icons.close
                                         : Icons.add),
                                   ),
-                                  const SizedBox(height: 16),
+                                  SizedBox(height: screenHeight*0.02),
                                   Visibility(
                                     visible: poiController.isExpanded.value,
                                     child: FloatingActionButton(
                                       heroTag: "addphoto",
                                       onPressed: () {
-                                        Get.to(AddPhoto(),
+                                        Get.to(const AddPhoto(),
                                            );
                                       },
                                       child:const Icon(Icons.image),
                                     ),
                                   ),
-                                  const SizedBox(height:16), 
+                                  SizedBox(height: screenHeight*0.02),
                                   Visibility(
                                     visible: poiController.isExpanded.value,
                                     child: FloatingActionButton(
@@ -139,7 +139,7 @@ class PoiDetails extends StatelessWidget {
                                       child: const Icon(Icons.comment),
                                     ),
                                   ),
-                                     const SizedBox(height:16),
+                                    SizedBox(height: screenHeight*0.02),
                                   Visibility(
                                     visible: poiController.isExpanded.value,
                                     child: FloatingActionButton(

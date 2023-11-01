@@ -10,17 +10,15 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:get/get.dart';
 
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatelessWidget {
+   HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   final HomeController homeController = Get.put(HomeController());
+
   final PoiDetailsController poiController = Get.find();
+
   final AuthController authcontroller = Get.find();
+
   final CurrentLocationController locationController =Get.put(CurrentLocationController());
 
   @override
@@ -37,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       body: FutureBuilder<List<Poi>>(
-        future: getPost(5000,35.825603,10.608395 /*locationController.longitude.value, locationController.longitude.value*/),
+        future: getPost(locationController.longitude.value, locationController.longitude.value),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<Poi> pois = snapshot.data!;
@@ -90,6 +88,4 @@ class _HomeScreenState extends State<HomeScreen> {
       return BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange);
     }
   }
-
-
 }

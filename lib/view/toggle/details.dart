@@ -40,7 +40,7 @@ class Details extends StatelessWidget {
                     ],
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 8, bottom: 8),
+                    padding:  EdgeInsets.only(top: screenHeight*0.006, bottom: screenHeight*0.008),
                     child: Column(
                       mainAxisSize: MainAxisSize.min, 
                       children: [
@@ -60,7 +60,7 @@ class Details extends StatelessWidget {
                   ),
                 ),
               ),
-              const Padding(padding: EdgeInsets.only(bottom: 15)),
+               Padding(padding: EdgeInsets.only(bottom: screenHeight*0.019)),
               Container(
                 width: screenWidth * 0.9,
                 decoration: BoxDecoration(
@@ -76,7 +76,7 @@ class Details extends StatelessWidget {
                   ],
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 8, bottom: 8),
+                  padding: EdgeInsets.only(top: screenHeight*0.006, bottom: screenHeight*0.008),
                   child: Column(
                     children: [
                       const Text(
@@ -94,7 +94,7 @@ class Details extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(bottom: 15)),
+               Padding(padding: EdgeInsets.only(bottom: screenHeight*0.019)),
               Container(
                 width: screenWidth * 0.9,
                 decoration: BoxDecoration(
@@ -105,12 +105,12 @@ class Details extends StatelessWidget {
                       color: Colors.grey.withOpacity(0.9),
                       spreadRadius: 1,
                       blurRadius: 1,
-                      offset: Offset(0, 1),
+                      offset: const Offset(0, 1),
                     ),
                   ],
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 8, bottom: 8),
+                  padding:  EdgeInsets.only(top: screenHeight*0.006, bottom: screenHeight*0.008),
                   child: Column(
                     children: [
                       const Text(
@@ -126,7 +126,7 @@ class Details extends StatelessWidget {
                   ),
                 ),
               ),
-              const Padding(padding: EdgeInsets.only(bottom: 15)),
+               Padding(padding: EdgeInsets.only(bottom: screenHeight*0.019)),
               Container(
                 height: poi.Connec!.length > 1
                     ? screenHeight * 0.2
@@ -140,12 +140,12 @@ class Details extends StatelessWidget {
                       color: Colors.grey.withOpacity(0.9),
                       spreadRadius: 1,
                       blurRadius: 1,
-                      offset: Offset(0, 1),
+                      offset: const Offset(0, 1),
                     ),
                   ],
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 8, bottom: 8),
+                  padding:  EdgeInsets.only(top: screenHeight*0.006, bottom: screenHeight*0.008),
                   child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: poi.Connec!.length,
@@ -163,7 +163,7 @@ class Details extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(bottom: 15)),
+               Padding(padding: EdgeInsets.only(bottom: screenHeight*0.019)),
             ],
           ),
         ),

@@ -64,7 +64,7 @@ class AddPhotoScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(right: 16, left: 16, top: 50),
+          padding:  EdgeInsets.only(right: screenWidth*0.02, left:screenWidth*0.02, top: screenHeight*0.13),
           child: Form(
             autovalidateMode: AutovalidateMode.onUserInteraction,
             key: formKey,

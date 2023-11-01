@@ -1,10 +1,11 @@
 import 'package:evchstation/controller/Auth/issignedin.dart';
-import 'package:evchstation/view/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_offline/flutter_offline.dart';
 import 'package:lottie/lottie.dart';
 
 class NetworkCheck extends StatelessWidget {
+  const NetworkCheck({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

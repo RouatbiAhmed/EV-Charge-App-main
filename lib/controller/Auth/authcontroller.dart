@@ -1,6 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:evchstation/view/home_screen.dart';
 import 'package:evchstation/view/auth/login_screen.dart';
+import 'package:evchstation/view/splash-screen/splash_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -38,20 +38,20 @@ class AuthController extends GetxController {
 
     final UserCredential userCredential =await _auth.signInWithCredential(credential);
 
-    Map<String, String> userdata = {
+   /* Map<String, String> userdata = {
       "email": "${useremail}",
-    };
+    };*/
 
-    final User user = userCredential.user!;
+    //final User user = userCredential.user!;
 
-    reference.doc(useremail).set(userdata);
+   // reference.doc(useremail).set(userdata);
     Get.offAll(() => HomeScreen());
   }
 
   void google_signOut() async {
     await googleSignIn
         .signOut()
-        .then((value) => Get.offAll(() => LoginScreen()));
+        .then((value) => Get.offAll(() => SplashScreen()));
   }
 
   // get current User info
@@ -62,7 +62,7 @@ class AuthController extends GetxController {
 
   GoogleSignIn googleSignIn =GoogleSignIn(scopes: ['email']);
 
-  CollectionReference reference =FirebaseFirestore.instance.collection("users");
+  //CollectionReference reference =FirebaseFirestore.instance.collection("users");
   String get imageurl => _firebaseUser.value!.photoURL!;
 
 
