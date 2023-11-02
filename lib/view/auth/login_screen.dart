@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
 
     return Scaffold(
 
-      
+
       body: Stack(children: [
         //app logo
         Positioned(

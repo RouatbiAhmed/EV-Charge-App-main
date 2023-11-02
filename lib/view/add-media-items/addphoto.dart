@@ -14,7 +14,7 @@ class AddPhoto extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    
     return Scaffold(
         appBar: AppBar(
           title:const Text('Add Photo'),
@@ -64,7 +64,7 @@ class AddPhotoScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding:  EdgeInsets.only(right: screenWidth*0.02, left:screenWidth*0.02, top: screenHeight*0.13),
+          padding:  EdgeInsets.only(right: screenWidth*0.02, left:screenWidth*0.02, top: screenHeight*0.02),
           child: Form(
             autovalidateMode: AutovalidateMode.onUserInteraction,
             key: formKey,
@@ -73,6 +73,13 @@ class AddPhotoScreen extends StatelessWidget {
                 () => Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    Padding(
+                      padding:  EdgeInsets.only(right:screenWidth*0.654),
+                      child: Text(poi?.addressInfo?.title??"Unknown",style: const TextStyle(fontSize: 20),),
+                    ),
+                    SizedBox(height: screenHeight * .04),
+                    const Text("You can upload a photo from your device or take a new photo",style: TextStyle(fontSize: 15),),
+                    SizedBox(height: screenHeight * .05),
                     TextFormField(
                       controller: descriptionTextController,
                       validator: (value) {
@@ -90,19 +97,23 @@ class AddPhotoScreen extends StatelessWidget {
                       maxLines: 4,
                     ),
                     SizedBox(height: screenHeight * .05),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor:const Color(0xFF28AAB1), 
-                      ),
-                      onPressed: () {
-                        if (formKey.currentState!.validate()) {
-                          photoController.pickImage(ImageSource.camera);
-                        }
-                      },
-                      child:const Text('Prendre une photo'),
-                    ),
-                    SizedBox(height: screenHeight * .05),
-                    ElevatedButton(
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(width: screenWidth * .03),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:const Color(0xFF28AAB1), 
+                          ),
+                          onPressed: () {
+                            if (formKey.currentState!.validate()) {
+                              photoController.pickImage(ImageSource.camera);
+                            }
+                          },
+                          child:const Text('Take new photo'),
+                        ),
+                        SizedBox(width: screenWidth * .03),
+                          ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor:const Color(0xFF28AAB1), 
                       ),
@@ -111,9 +122,11 @@ class AddPhotoScreen extends StatelessWidget {
                           photoController.pickImage(ImageSource.gallery);
                         }
                       },
-                      child:const Text('Choisir depuis la galerie'),
+                      child:const Text('Uplod  from your device'),
                     ),
-                    SizedBox(height: screenHeight * .05),
+                      ],
+                    ),
+
                     if (photoController.image.value != null)
                       Image.file(
                         photoController.image.value!,
@@ -121,7 +134,7 @@ class AddPhotoScreen extends StatelessWidget {
                         height: screenHeight * 0.4,
                         fit: BoxFit.cover,
                       ),
-                    SizedBox(height: screenHeight * .01),
+                    SizedBox(height: photoController.image.value != null?screenHeight * .1:screenHeight * .3),
                     ElevatedButton(
                       onPressed: () {
                         if (formKey.currentState!.validate()) {

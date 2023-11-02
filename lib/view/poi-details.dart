@@ -11,10 +11,8 @@ import 'add-media-items/addphoto.dart';
 class PoiDetails extends StatelessWidget {
   PoiDetails({super.key});
 
-   final HomeController homeController = Get.find<HomeController>();
-
-   
-    final PoiDetailsController poiController = Get.find();
+   final HomeController homeController = Get.find<HomeController>(); 
+   final PoiDetailsController poiController = Get.find();
 
   @override
   Widget build(BuildContext context) {

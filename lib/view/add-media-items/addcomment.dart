@@ -65,12 +65,19 @@ class AddCommentScreen extends StatelessWidget {
           padding: EdgeInsets.only(
               left: screenWidth * 0.04,
               right: screenWidth * 0.04,
-              top: screenHeight * 0.1),
+              top: screenHeight * 0.03),
           child: Form(
             autovalidateMode: AutovalidateMode.onUserInteraction,
             key: formKey,
             child: Column(
               children: [
+                Padding(
+                      padding:  EdgeInsets.only(right:screenWidth*0.35),
+                      child: Text(poi?.addressInfo?.title??"Unknown",style: const TextStyle(fontSize: 20),),
+                    ),
+                SizedBox(height: screenHeight * .04),
+                const Text("Recent Check-ins are a big help to other drivers when planning their journey. Tell everyone what you thought about this charging location.",style: TextStyle(fontSize: 15),),
+                SizedBox(height: screenHeight * .05),
                 TextFormField(
                   controller: commentTextController,
                   validator: (value) {
