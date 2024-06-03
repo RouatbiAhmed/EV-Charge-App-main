@@ -1,5 +1,5 @@
 
-//---------
+
 //1-media querry-------------
 //2-google auth conroller --------
 //3-splash and on boarding----------
